@@ -7,8 +7,8 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -64,7 +64,7 @@ public class HomeController {
 		
 	}
 	
-	@RequestMapping(value="/submitregistration", method=RequestMethod.POST)
+	@PostMapping(value="/submitregistration")
 	public ModelAndView submitRegistrationMethod(@ModelAttribute("homeEntities") HomeEntities home) {
 		ModelAndView model = new ModelAndView();
 		model.setViewName("submitregistration");
@@ -73,7 +73,7 @@ public class HomeController {
 		
 	}
 	
-	@RequestMapping(value="/authenticate", method=RequestMethod.POST)
+	@PostMapping(value="/authenticate")
 	public ModelAndView submitLoginMethod(@ModelAttribute("homeEntities") HomeEntities home) {
 		ModelAndView model = new ModelAndView();
 		model.setViewName("submitlogin");
